@@ -1,7 +1,7 @@
 EXEC=b.out
 OBJ_DIR=./obj
-#OBJ=vector.o matrix.o SIM.o
-SCR=vector.cpp matrix.cpp SIM.cpp
+#OBJ=vector.o matrix.o solver.o main.o
+SCR=vector.cpp matrix.cpp solver.cpp main.cpp
 .SUFFIXES: .o .cpp
 OBJ1=$(SCR:.cpp=.o)
 OBJ=$(patsubst %.o, $(OBJ_DIR)/%.o, $(OBJ1))
@@ -11,7 +11,7 @@ all: ${EXEC}
 ${EXEC}: ${OBJ}
         g++ -o ${EXEC} ${OBJ}
 
-${OBJ_DIR}/SIM.o: SIM.cpp
+${OBJ_DIR}/main.o: main.cpp
         g++ -c $< -o $@
 
 ${OBJ_DIR}/%.o: %.cpp
