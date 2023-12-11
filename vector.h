@@ -19,7 +19,9 @@ public:
     Vector& operator=(const Vector& a);
     // Vector& operator=(Vector&& a) noexcept;
     double operator*(const Vector& a) const;
+    Vector operator*(double lambda) const;
     Vector operator+(const Vector& a) const;
+    Vector operator-(const Vector& a) const;
 protected:
     int size;
     double* values;
