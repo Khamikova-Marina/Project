@@ -6,7 +6,7 @@ OBJ=$(patsubst %.o, $(OBJ_DIR)/%.o, $(OBJ1))
 
 .SUFFIXES: .o .cpp
 all: ${EXEC}
-	@echo "Hello world!" ${OBJ} ${OBJ1}
+	@echo "Hello, world!" ${OBJ} ${OBJ1}
 
 ${EXEC}: ${OBJ}
 	ar sr ${EXEC} ${OBJ}
