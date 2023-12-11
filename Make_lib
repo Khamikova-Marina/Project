@@ -1,6 +1,6 @@
-EXEC=libkirill.a
+EXEC=libmarina.a
 OBJ_DIR=./obj_1
-SRC=Vector.cpp Matrix.cpp Solver.cpp
+SRC=vector.cpp matrix.cpp solver.cpp
 OBJ1=$(SRC:.cpp=.o)
 OBJ=$(patsubst %.o, $(OBJ_DIR)/%.o, $(OBJ1))
 
