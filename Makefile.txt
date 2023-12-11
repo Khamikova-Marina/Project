@@ -1,0 +1,20 @@
+EXEC=b.out
+OBJ_DIR=./obj
+#OBJ=vector.o matrix.o SIM.o
+SCR=vector.cpp matrix.cpp SIM.cpp
+.SUFFIXES: .o .cpp
+OBJ1=$(SCR:.cpp=.o)
+OBJ=$(patsubst %.o, $(OBJ_DIR)/%.o, $(OBJ1))
+all: ${EXEC}
+        @echo "Hello, world!" ${OBJ}
+
+${EXEC}: ${OBJ}
+        g++ -o ${EXEC} ${OBJ}
+
+${OBJ_DIR}/SIM.o: SIM.cpp
+        g++ -c $< -o $@
+
+${OBJ_DIR}/%.o: %.cpp
+        g++ -c $< -o $@
+
+
