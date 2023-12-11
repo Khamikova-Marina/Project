@@ -81,6 +81,25 @@ Vector Vector::operator+(const Vector& other) const {
     }
 }
 
+Vector Vector::operator*(double lambda) const {
+    Vector res_vec(size, values);
+    for (int i = 0; i < size; ++i) {
+        res_vec.set_value(i, res_vec.get_value(i) * lambda);
+    }
+    return res_vec;
+}
+
+Vector Vector::operator-(const Vector& other) const {
+    // cout << size << " " << other.get_size() << endl;
+    if(size != other.get_size()) {
+        cout << "Different sizes(sum)!" << '\n';
+        throw 2;
+    }
+    else {
+        return *this + other*(-1);
+    }
+}
+
 Vector Vector::sum(const Vector& a) const {
     return *this + a;
 }
