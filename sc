@@ -21,7 +21,7 @@ exit
 if [ -e $EXE ]; then
 rm $EXE
 fi
-g++ vector.cpp matrix.cpp SIM.cpp
+g++ vector.cpp matrix.cpp solver.cpp main.cpp
 
 if [ -e $EXE ]; then
 ./$EXE
